@@ -1,0 +1,51 @@
+version: '3.6'
+services:
+    # Web server
+    nginx:
+        build: docker/nginx
+        ports:
+            - '8080:80'
+        volumes:
+            - './src:/usr/share/nginx/html'
+    # Php (back rendering)
+    php:
+        build: docker/php
+        volumes:
+            - './src:/usr/share/nginx/html'
+        environment:
+            - APP_DEBUG=true
+    composer:
+        image: 'composer:2.0'
+        command: install
+        volumes:
+            - './src:/app'
+    # Database (and its web manager)
+    db:
+        image: 'postgres:10.4'
+        environment:
+            - PGDATA=/var/lib/postgresql/data/pgdata
+            - POSTGRES_DB=symfony
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=pwd
+    adminer:
+        image: 'adminer:4.7'
+        ports:
+            - '8081:8080'
+    # SMTP server
+    mailhog:
+        image: 'mailhog/mailhog:latest'
+        ports:
+            # SMTP port
+            - '1025:1025'
+            # Web port
+            - '8025:8025'
+    # Rendering js and css with npm
+    node:
+        build: docker/node
+        ports:
+            - '3000:3000'
+        volumes:
+            - './src:/home/node/app'
+        command:
+        - 'npm install'
+        - 'npm run dev'
