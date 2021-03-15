@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+
+<div id="app">
+    {% verbatim %}
+    <h1>
+    Hello {{ message }}! ✅
+    </h1>
+    |{% endverbatim %}
+
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your co|ntroller at <code><a href="{{ '/usr/share/nginx/html/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/usr/share/nginx/html/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
