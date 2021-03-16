@@ -4,4 +4,3 @@ RUN apk --no-cache add pkgconfig autoconf automake libtool nasm build-base zlib-
 
 WORKDIR /home/node/app
 
-CMD /bin/sh -c yarn install && yarn watch
