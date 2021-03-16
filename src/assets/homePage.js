@@ -6,6 +6,4 @@ new Vue({
     el: "#demoComponent",
     components: { DemoComponent },
     template: "<DemoComponent />",
-
-
 })
