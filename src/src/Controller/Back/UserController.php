@@ -68,7 +68,7 @@ class UserController extends AbstractController
     public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         if ($user !== $this->getUser()) {
-            throw new RuntimeException('Denied access', 403);
+            throw $this->createAccessDeniedException();
         }
 
         $user->setPassword('');
