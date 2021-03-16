@@ -10,7 +10,6 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
-
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
