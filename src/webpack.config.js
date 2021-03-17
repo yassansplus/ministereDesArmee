@@ -57,7 +57,6 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
-    .enableVueLoader()
     // yarn add vue@^2.5 vue-loader@^15.9.5 vue-template-compiler --dev
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()

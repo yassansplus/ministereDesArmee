@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-md sticky-top">
+    <!-- One of the primary actions on mobile is to call a business - This displays a phone button on mobile only -->
+    <div class="navbar-toggler-right">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+
+    <div class="collapse navbar-collapse flex-column " id="navbar">
+
+        <ul class="navbar-nav  w-100 justify-content-around px-3 firstNavbar">
+            <li class="nav-item">
+                <img src="{{ asset('images/logo.png') }}" alt="" class="logo">
+                <img src="{{ asset('images/Logo_CivilsDeLaDefense.665d2b7f.svg') }}" alt="" class="logo">
+            </li>
+            <li class="nav-item">
+
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link inputNavbar">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link btn btn-primary text-white" href="http://example.com" id="navbarDropdownMenuLink"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown link
+                </a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav justify-content-center w-100 px-3 shadow-sm">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    Trouver mon dispositif
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="">
+                    Les différents dispositifs de formation
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    Le catalogue de formation
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="">
+                    Devenir formateur interne
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    Annuaire
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="">
+                    Les ressourcse réglementaire
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+
+</nav>

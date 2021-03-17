@@ -1,17 +1,100 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello DefaultController!{% endblock %}
-
+    {% block stylesheets %}
+        {{ parent() }}
+        {{ encore_entry_link_tags('home') }}
+    {% endblock %}
 {% block body %}
+    <div class="container-fluid">
+        <div class="row banner position-relative">
+            <div class="col-12">
+                <img src="{{ asset('images/Composant1.jpg') }}" class="col-12" alt="">
+            </div>
+            <div class=" titleBlock col-5 offset-2">
+                <h1 class="title-blue">A la recherche d'une formation ?</h1>
+                <a href="#" class="btn btn-primary">Je trouve mon dispositif</a>
+            </div>
+        </div>
 
-<div >
 
-    <div id="demoComponent"></div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Actualités</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <h3 class="text-right col-10">Nouvelle formation: Master CyberDefense à St Cyr</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor ipsam itaque praesentium
+                    voluptatem? A adipisci deserunt dicta illo labore necessitatibus, numquam perspiciatis
+                    quis recusandae sequi totam unde ut veniam!
+                </p>
+            </div>
+            <div class="col-3">
+                <h3 class="text-right col-10">Nouvelle formation: Master CyberDefense à St Cyr</h3>
+                <p>
+                    {# TODO: ajouter le paragraphe ici #}
+                </p>
+            </div>
+        </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your co|ntroller at <code><a href="{{ '/usr/share/nginx/html/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/usr/share/nginx/html/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <div class="row justify-content-center blueBLock">
+            <div class="jumbotron blueBLock jumbotron-fluid col-12 text-center">
+                <h2 class="display-4 text-white">Nos différents dispositifs de formation</h2>
+                <img src="{{ asset('images/chapeau_blanc.png') }}" alt="">
+                <p class="text-white">CPF,CSP,Préparation aux concours, etc</p>
+                <a href="" class="btn  bg-white title-blue">Je découvre les dispositif de formation</a>
+            </div>
+        </div>
+
+        <div class="row banner position-relative">
+            <div class="col-12">
+                <img src="{{ asset('images/Composant2.jpg') }}" class="col-12" alt="">
+            </div>
+            <div class="titleBlock searchFormation col-5 offset-7">
+                <h3 class="col-10 title-blue">A la recherche d'une formation ?</h3>
+                <div class="col-10">
+                    <p class="col-12">Plus de 400 formations</p>
+                    <a href="" class="btn btn-primary">Découvrir le catalogue de formation</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row blockFormateur">
+            <div class="col-3 offset-1">
+                <h3 class="title-grey">
+                    Je souhaite devenir formateur
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Accusamus alias corporis eaque est eveniet, fuga ipsum maiores molestiae non praesentium quas qui,
+                    quibusdam ratione reiciendis sed sit sunt voluptates voluptatum!
+                </p>
+                <div class="row justify-content-center">
+                    <a href="" class="btn btn-primary">
+                        Je deviens formateur
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-8">
+                <img src="{{ asset('images/formateur.jpg') }}" class="w-100" alt="">
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center blueBLock">
+            <div class="jumbotron blueBLock jumbotron-fluid col-12 text-center">
+                <h2 class="display-4 text-white">Annuaire</h2>
+                <img src="{{ asset('images/annuaire_blanc.png') }}" alt="">
+                <p class="text-white">CPF,CSP,Préparation aux concours, etc</p>
+                <a href="" class="btn  bg-white title-blue">Je consulte l'annuaire des formateur</a>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
