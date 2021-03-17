@@ -9,9 +9,8 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Username</th>
+                <th>Nom d'utilisateur</th>
                 <th>Roles</th>
-                <th>Password</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,19 +20,18 @@
                 <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
                 <td>
-                    <a href="{{ path('back_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('back_user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('back_user_show', {'id': user.id}) }}">Voir</a>
+                    <a href="{{ path('back_user_edit', {'id': user.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('back_user_new') }}" class="btn btn-primary">Create new</a>
+    <a href="{{ path('back_user_new') }}" class="btn btn-primary">Créer un utilisateur</a>
 {% endblock %}
