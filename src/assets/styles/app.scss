@@ -1,3 +1,110 @@
-body {
-    background-color: lightgray;
+@import "variables";
+
+@font-face {
+  font-family: "Marianne";
+  src: url("Marianne/web/Marianne-Regular.woff2") format("woff2"),
+  url("Marianne/web/Marianne-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Marianne-Light";
+  src: url("Marianne/web/Marianne-Light.woff2") format("woff2"),
+  url("Marianne/web/Marianne-Light.woff") format("woff");
+}
+
+
+/*-------------Navbar------------------*/
+.navbar {
+  padding: 0rem;
+  margin-bottom: 2rem;
+  background: white;
+  .inputNavbar{
+    width:500px;
+    padding:0;
+  }
+  .firstNavbar{
+    padding: 15px;
+  }
+
+  a {
+    color: $light-grey;
+    transition: all linear 0.4s;
+    &:hover{
+      color: $blue;
+    }
+  }
+}
+
+.dropdown .dropdown-menu {
+  border-radius: 0;
+}
+
+
+
+/* Medium devices (tablets, 768px and up)
+The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    border-radius: 0;
+  }
+}
+
+
+/*----------Fin NAVBAR-----------*/
+
+
+* {
+  font-family: Marianne, Arial;
+}
+
+.logo {
+  width: 100px;
+}
+
+.title-blue {
+  color: $blue;
+}
+
+.title-grey {
+  color: $high-grey;
+}
+
+.btn-primary, .blueBLock {
+  background-color: $blue;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  height: 100%;
+  width: 50%;
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease-in-out 1s;
+  transform: scale(5, 5);
+}
+
+.btn:active::after {
+  padding: 0;
+  margin: 0;
+  opacity: .2;
+  transition: 0s;
+  transform: scale(0, 0);
+}
+
+p {
+  color: $light-grey;
 }

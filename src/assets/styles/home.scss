@@ -1,0 +1,61 @@
+@import "variables";
+.banner {
+  z-index: 2;
+
+  h1 {
+    z-index: 2;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 80px;
+  }
+
+  .titleBlock {
+    position: absolute;
+    top: 100px;
+    font-weight: bold;
+  }
+
+  .searchFormation {
+    padding-right: 80px;
+
+    h3 {
+      margin-bottom: $mbTitle;
+      font-size: 60px;
+    }
+
+    div {
+      * {
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+.blueBLock {
+  img {
+    width: 100px;
+    color: white;
+    margin: 30px 0;
+  }
+
+  p {
+    font-family: "Marianne-Light", serif;
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 40px;
+  }
+}
+
+.blockFormateur {
+  h3 {
+    margin-top: 80px;
+    margin-bottom: $mbTitle;
+    font-size: 39px;
+    font-weight: bold;
+  }
+  p{
+    margin-bottom: $mbTitle;
+  }
+}
