@@ -35,7 +35,6 @@ class ChatBotSay
     private $userSays;
 
 
-
     public function __construct()
     {
         $this->answersOfUser = new ArrayCollection();

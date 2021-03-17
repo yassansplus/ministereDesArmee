@@ -35,7 +35,6 @@ class UserSay
     private $parentQuestion;
 
 
-
     public function __construct()
     {
         $this->chatBotSays = new ArrayCollection();
@@ -97,7 +96,6 @@ class UserSay
 
         return $this;
     }
-
 
 
 }

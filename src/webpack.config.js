@@ -22,6 +22,7 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('home', './assets/homePage.js')
+    .addStyleEntry('chatbot', './assets/styles/chatbot.scss')
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
@@ -57,19 +58,19 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
-    // yarn add vue@^2.5 vue-loader@^15.9.5 vue-template-compiler --dev
-    // uncomment if you use TypeScript
-    //.enableTypeScriptLoader()
+// yarn add vue@^2.5 vue-loader@^15.9.5 vue-template-compiler --dev
+// uncomment if you use TypeScript
+//.enableTypeScriptLoader()
 
-    // uncomment if you use React
-    //.enableReactPreset()
+// uncomment if you use React
+//.enableReactPreset()
 
-    // uncomment to get integrity="..." attributes on your script & link tags
-    // requires WebpackEncoreBundle 1.4 or higher
-    //.enableIntegrityHashes(Encore.isProduction())
+// uncomment to get integrity="..." attributes on your script & link tags
+// requires WebpackEncoreBundle 1.4 or higher
+//.enableIntegrityHashes(Encore.isProduction())
 
-    // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+// uncomment if you're having problems with a jQuery plugin
+//.autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();
