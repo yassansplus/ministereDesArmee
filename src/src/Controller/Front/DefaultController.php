@@ -17,4 +17,36 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+
+    /**
+     * @Route("/dispositif-de-formation", name="dispositifs_de_formation")
+     */
+    public function dispositifsDeFormation(): Response
+    {
+        return $this->render('front/dispositifs_de_formation.html.twig');
+    }
+
+    /**
+     * @Route("/catalogue-de-formation", name="catalogue_de_formation")
+     */
+    public function catalogueDeFormation(): Response
+    {
+        return $this->render('front/catalogue_de_formation.html.twig');
+    }
+
+    /**
+     * @Route("/devenir-formateur-interne", name="devenir_formateur_interne")
+     */
+    public function devenirFormateurInterne(): Response
+    {
+        return $this->render('front/devenir_formateur_interne.html.twig');
+    }
+
+    /**
+     * @Route("/annuaire", name="annuaire")
+     */
+    public function annuaire(): Response
+    {
+        return $this->render('front/annuaire.html.twig');
+    }
 }
