@@ -19,13 +19,18 @@ function replyToHibot(id, content) {
 }
 
 function createElementUserAnswer(content, isHibot) {
+    imgClone = document.getElementById('imageHibot').cloneNode(true);
     //if isHibot true => bubble will be to the left
     var li = document.createElement('li');
     var div = document.createElement('div');
     var para = document.createElement("p");
     var node = document.createTextNode(content);
     div.className = "chat-body clearfix"
-    li.className = `clearfix ${isHibot ? 'agent' : 'admin'} `;
+    li.className = `clearfix ${isHibot ? 'agent' : 'admin'}   position-relative`;
+    if (isHibot) {
+        li.appendChild(imgClone);
+    }
+
     para.appendChild(node);
     div.appendChild(para);
     li.appendChild(div);
