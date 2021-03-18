@@ -4,62 +4,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <style>
-    html, body {
-        height: 100%;
-    }
-
-    .bg-gray-100 {
-        background-color: #f4f4f4;
-    }
-
-    option:hover {
-        color: red;
-    }
-
-    .nostyle {
-        font-family: inherit; /* 1 */
-        background-color: inherit;
-        font-size: 100%; /* 1 */
-        line-height: 1.15; /* 1 */
-        margin: 0; /* 2 */
-        border-style: none;
-        overflow: visible;
-        border-style: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-
-    .nostyle:focus {
-        outline: none;
-    }
-
-    .nostyle::placeholder {
-        color: #d2d2d2;
-    }
-
-    .text-gray-200 {
-        color: #d2d2d2;
-    }
-
-    article.formateur {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-
-        border: solid blue 3px;
-    }
-
-    .btn-outline-primary {
-        border-color: #000091;
-    }
-
-    .btn-outline-primary:hover {
-        background-color: #000091;
-    }
-    
-    </style>
+    {{ encore_entry_link_tags('annuaire') }}
 {% endblock %}
 
 {% block body %}

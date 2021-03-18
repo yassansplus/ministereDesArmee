@@ -4,11 +4,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <style>
-    html, body {
-        height: 100%;
-    }
-    </style>
+    {{ encore_entry_link_tags('login') }}
 {% endblock %}
 
 
