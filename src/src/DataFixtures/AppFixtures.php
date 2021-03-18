@@ -3,9 +3,11 @@
 namespace App\DataFixtures;
 
 use App\Entity\ChatBotSay;
+use App\Entity\Faq;
 use App\Entity\UserSay;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker;
 
 class AppFixtures extends Fixture
 {
@@ -25,6 +27,15 @@ class AppFixtures extends Fixture
 
             $manager->persist($userSay);
         }
+        for ($i = 0; $i < 5; $i++) {
+            $faker = Faker\Factory::create();
+
+            $faq = new Faq();
+            $faq->setQuestion($faker->words(8, true));
+            $faq->setAnswer($faker->words(100, true));
+            $manager->persist($faq);
+        }
+
         $manager->flush();
     }
 }

@@ -21,14 +21,6 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/dispositif-de-formation", name="dispositifs_de_formation")
-     */
-    public function dispositifsDeFormation(): Response
-    {
-        return $this->render('front/dispositifs_de_formation.html.twig');
-    }
-
-    /**
      * @Route("/catalogue-de-formation", name="catalogue_de_formation")
      */
     public function catalogueDeFormation(): Response
