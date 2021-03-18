@@ -2,7 +2,9 @@
 
 namespace App\Controller\Front;
 
+use App\Repository\ContactRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -45,53 +47,28 @@ class DefaultController extends AbstractController
     /**
      * @Route("/annuaire", name="annuaire")
      */
-    public function annuaire(): Response
+    public function annuaire(ContactRepository $repo, Request $request): Response
     {
-
-        $foundContacts = [
-            [
-                'photo' => 'photohomme.png',
-                'name' => 'Olivier Gil',
-                'phone' => '0223444653',
-                'email' => 'olivier1.gil@intrades.gouv.fr'
-            ],
-            [
-                'photo' => 'photofemme.png',
-                'name' => 'Silvie Moulac',
-                'phone' => '0223444653',
-                'email' => 'olivier1.gil@intrades.gouv.fr'
-            ],
-            [
-                'photo' => 'photohomme.png',
-                'name' => 'Olivier Gil',
-                'phone' => '0223444653',
-                'email' => 'olivier1.gil@intrades.gouv.fr'
-            ],
-            [
-                'photo' => 'photofemme.png',
-                'name' => 'Silvie Moulac',
-                'phone' => '0223444653',
-                'email' => 'olivier1.gil@intrades.gouv.fr'
-            ],
-            [
-                'photo' => 'photofemme.png',
-                'name' => 'Silvie Moulac',
-                'phone' => '0223444653',
-                'email' => 'olivier1.gil@intrades.gouv.fr'
-            ],
-
+        $cities = [
+            'Rennes',
+            'Bourges',
+            'Angers',
+            'Tours',
+            'Cherbourg',
+            '...'
         ];
+        $contacts = [];
+
+        // If any search, do the search
+        if ($request->query->has('formateurName')) {
+            $contacts = $repo->findLikeName($request->query->get('formateurName'));
+        } else {
+            $contacts = $repo->findAll();
+        }
 
         return $this->render('front/annuaire.html.twig', [
-            'contacts' => $foundContacts,
-            'cities' => [
-                'Rennes',
-                'Bourges',
-                'Angers',
-                'Tours',
-                'Cherbourg',
-                '...'
-            ]
+            'contacts' => $contacts,
+            'cities' => $cities
         ]);
     }
 }
