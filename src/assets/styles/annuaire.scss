@@ -49,3 +49,11 @@ article.formateur {
 .btn-outline-primary:hover {
     background-color: $blue;
 }
+
+.search-button {
+    background-color: $blue;
+    padding: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
+}
