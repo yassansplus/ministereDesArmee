@@ -1,0 +1,58 @@
+@import "variables";
+
+.form-control {
+  padding: 30px 10px;
+  background-color: $even-lighter-grey;
+  font-family: Marianne-Light, serif;
+  margin-bottom: 20px;
+  border-radius: 7px;
+
+  &:focus {
+    outline: 0 none;
+    box-shadow: none;
+    border-color: $blue;
+  }
+
+  &::placeholder {
+    color: $light-grey;
+  }
+}
+
+#textarea {
+  padding: 10px;
+  min-height: 100px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-bottom: 45px;
+}
+
+.btn-outline-primary, input[type="submit"] {
+  border-radius: 14px;
+  border: 2px solid;
+  padding: 15px;
+}
+
+.btn-outline-primary {
+  background-color: white;
+}
+
+.bcgImage {
+  background-image: url("../images/iStock-1164440614.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-container {
+  background-color: white;
+  margin: 30px;
+  padding: 50px 30px;
+}
+
+.container-fluid.specialWidth {
+  max-width: initial;
+}

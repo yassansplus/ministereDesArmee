@@ -23,8 +23,9 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('home', './assets/homePage.js')
     .addEntry('chatBot', './assets/chatBot.js')
-    .addStyleEntry('chatbot', './assets/styles/chatbot.scss')
 
+    .addStyleEntry('chatbot', './assets/styles/chatbot.scss')
+    .addStyleEntry('devenir-formateur', './assets/styles/devenir-formateur.scss')
     .addStyleEntry('faq', './assets/styles/faq.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
