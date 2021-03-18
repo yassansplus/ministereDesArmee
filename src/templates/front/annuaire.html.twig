@@ -5,8 +5,16 @@
 {% block stylesheets %}
     {{ parent() }}
     <style>
+    html, body {
+        height: 100%;
+    }
+
     .bg-gray-100 {
         background-color: #f4f4f4;
+    }
+
+    option:hover {
+        color: red;
     }
 
     .nostyle {
@@ -23,7 +31,6 @@
         appearance: none;
     }
 
-
     .nostyle:focus {
         outline: none;
     }
@@ -35,16 +42,29 @@
     .text-gray-200 {
         color: #d2d2d2;
     }
+
+    article.formateur {
+        border: solid blue 2px;
+        padding: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-right: 1em;
+        margin-left: 1em;
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
     
     </style>
 {% endblock %}
 
 {% block body %}
-<div style="width: 93%; margin: auto;">
+<div style="width: 93%; margin: auto;" class="pb-2">
     <h1 class="font-weight-bold">Annuaire des formateurs</h1>
 </div>
 
-<section class="container bg-gray-100">
+<section class="container bg-gray-100 py-3">
     <div class="row flex-column text-center mb-2">
         <div class="title-blue mb-2 mt-4">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.03 170.25" style="width: 64px; fill:#000091;">
@@ -74,25 +94,61 @@
     <div class="row justify-content-center mt-5">
         <h3 class="title-blue font-weight-bold">Recherche de formateur</h3>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-4 pb-4">
+        
         <div class="col-4">
             {# Input 1 #}
-            <div class="custom-select px-2" style="background: none;">
-                        <select class="nostyle text-gray-200" style="width: 90%;" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-
-                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.46 171.46" class="fill-gray-200 w-16" style="width: 24px; padding-bottom: 0.5em; fill: #d2d2d2;">
-                            <g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1">
-                                <path d="M167.66,149.27l-42.35-42.35a68.65,68.65,0,1,0-18.4,18.38l42.36,42.36a13,13,0,0,0,18.39-18.39Zm-61.19-47.33a50.55,50.55,0,1,1,12.6-33.4A50.59,50.59,0,0,1,106.47,101.94Z"/></g></g>
-                         </svg>
-                    </div>
+            <label>Thématique</label>
+            <select class="custom-select" style="width: 100%; background-color: white;" id="inputGroupSelect01">
+                <option selected>Déroulez le contenu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option> 
+            </select>
         </div>
-        <div class="col-4">dsdds</div>
-        <div class="col-4">dsdds</div>
+        <div class="col-4">
+            <label>Ville</label>
+            <select class="custom-select" style="width: 100%; background-color: white;" id="inputGroupSelect01">
+                <option selected>Villes</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option> 
+            </select>
+        </div>
+        <div class="col-4">
+            <label>Acteur(s) ressource(s)</label>
+            <select class="custom-select" style="width: 100%; background-color: white;" id="inputGroupSelect01">
+                <option selected>Déroulez le contenu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option> 
+            </select>
+        </div>
     </div>
+</section>
+
+<section class="container mt-5 pt-3 pb-5">
+    <h3 class="title-blue font-weight-bold mb-5">2 formateurs trouvés</h3>
+    <section class="row">
+        <article class="formateur col-3">
+            <div class="mb-1">PHOTO</div>
+            <div class="mb-2 title-blue">Olivier Gil</div>
+            <div class="mb-2">
+                <div>02 23 44 46 53</div>
+                <div>olivier1.gil@intrades.gouv.fr</div>
+            </div>
+            <button class="btn btn-outline-primary mx-5">Contacter</button>
+        </article>
+
+        <article class="formateur col-3">
+            <div class="mb-1">PHOTO</div>
+            <div class="mb-2 title-blue">Olivier Gil</div>
+            <div class="mb-2">
+                <div>02 23 44 46 53</div>
+                <div>olivier1.gil@intrades.gouv.fr</div>
+            </div>
+            <button class="btn btn-outline-primary mx-5">Contacter</button>
+        </article>
+    </section>
 </section>
 {% endblock %}
