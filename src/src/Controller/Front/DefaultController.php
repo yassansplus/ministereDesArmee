@@ -47,6 +47,51 @@ class DefaultController extends AbstractController
      */
     public function annuaire(): Response
     {
-        return $this->render('front/annuaire.html.twig');
+
+        $foundContacts = [
+            [
+                'photo' => 'photohomme.png',
+                'name' => 'Olivier Gil',
+                'phone' => '0223444653',
+                'email' => 'olivier1.gil@intrades.gouv.fr'
+            ],
+            [
+                'photo' => 'photofemme.png',
+                'name' => 'Silvie Moulac',
+                'phone' => '0223444653',
+                'email' => 'olivier1.gil@intrades.gouv.fr'
+            ],
+            [
+                'photo' => 'photohomme.png',
+                'name' => 'Olivier Gil',
+                'phone' => '0223444653',
+                'email' => 'olivier1.gil@intrades.gouv.fr'
+            ],
+            [
+                'photo' => 'photofemme.png',
+                'name' => 'Silvie Moulac',
+                'phone' => '0223444653',
+                'email' => 'olivier1.gil@intrades.gouv.fr'
+            ],
+            [
+                'photo' => 'photofemme.png',
+                'name' => 'Silvie Moulac',
+                'phone' => '0223444653',
+                'email' => 'olivier1.gil@intrades.gouv.fr'
+            ],
+
+        ];
+
+        return $this->render('front/annuaire.html.twig', [
+            'contacts' => $foundContacts,
+            'cities' => [
+                'Rennes',
+                'Bourges',
+                'Angers',
+                'Tours',
+                'Cherbourg',
+                '...'
+            ]
+        ]);
     }
 }
