@@ -47,7 +47,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/annuaire", name="annuaire")
      */
-    public function annuaire(ContactRepository $repo, Request $request): Response
+    public function annuaire(ContactRepository $contactRepo, Request $request): Response
     {
         $cities = [
             'Rennes',
@@ -61,9 +61,9 @@ class DefaultController extends AbstractController
 
         // If any search, do the search
         if ($request->query->has('formateurName')) {
-            $contacts = $repo->findLikeName($request->query->get('formateurName'));
+            $contacts = $contactRepo->findLikeName($request->query->get('formateurName'));
         } else {
-            $contacts = $repo->findAll();
+            $contacts = $contactRepo->findAll();
         }
 
         return $this->render('front/annuaire.html.twig', [
