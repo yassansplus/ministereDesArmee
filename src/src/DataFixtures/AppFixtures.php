@@ -35,6 +35,7 @@ class AppFixtures extends Fixture
             $faq->setAnswer($faker->words(100, true));
             $manager->persist($faq);
         }
+
         $manager->flush();
     }
 }

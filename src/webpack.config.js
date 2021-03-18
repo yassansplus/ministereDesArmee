@@ -24,7 +24,9 @@ Encore
     .addEntry('home', './assets/homePage.js')
     .addEntry('chatBot', './assets/chatBot.js')
     .addStyleEntry('chatbot', './assets/styles/chatbot.scss')
+
     .addStyleEntry('faq', './assets/styles/faq.scss')
+
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
