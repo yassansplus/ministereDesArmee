@@ -12,24 +12,36 @@
   url("Marianne/web/Marianne-Light.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Marianne-Bold";
+  src: url("Marianne/web/Marianne-Bold.woff2") format("woff2"),
+  url("Marianne/web/Marianne-Bold.woff") format("woff");
+}
+
+.MarianneBold {
+  font-family: Marianne-Bold, serif;
+}
 
 /*-------------Navbar------------------*/
 .navbar {
-  padding: 0rem;
+  padding: 0;
   margin-bottom: 2rem;
   background: white;
-  .inputNavbar{
-    width:500px;
-    padding:0;
+
+  .inputNavbar {
+    width: 500px;
+    padding: 0;
   }
-  .firstNavbar{
+
+  .firstNavbar {
     padding: 15px;
   }
 
   a {
     color: $light-grey;
     transition: all linear 0.4s;
-    &:hover{
+
+    &:hover {
       color: $blue;
     }
   }
@@ -38,7 +50,6 @@
 .dropdown .dropdown-menu {
   border-radius: 0;
 }
-
 
 
 /* Medium devices (tablets, 768px and up)
@@ -56,7 +67,7 @@ The navbar toggle appears at this breakpoint */
 
 
 * {
-  font-family: Marianne, Arial;
+  font-family: Marianne, Arial, serif;
 }
 
 .logo {
@@ -73,6 +84,12 @@ The navbar toggle appears at this breakpoint */
 
 .btn-primary, .blueBLock {
   background-color: $blue;
+}
+
+.btn-outline-primary {
+  color: $blue;
+  border-color: $blue;
+  border-radius: 50px;
 }
 
 .btn {
