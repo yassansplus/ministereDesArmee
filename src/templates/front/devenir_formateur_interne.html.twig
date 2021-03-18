@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Devenir formateur interne{% endblock %}
-
+    {% block stylesheets %}
+        {{ parent() }}
+        {{ encore_entry_link_tags('devenir-formateur') }}
+    {% endblock %}
 {% block body %}
     <div class="container-fluid">
         <div class="row">
-            <h1 class="title-grey MarianneBold">Devenir Formateur interne</h1>
+            <h1 class="title-grey MarianneBold mb-30">Devenir Formateur interne</h1>
         </div>
         <div class="row">
             <div class="col-12 col-md-10 offset-md-1">
@@ -28,8 +31,79 @@
                 </p>
             </div>
         </div>
+    </div>
+    <div class="container-fluid specialWidth">
 
-        <div class="row col-12">
+        <div class="row col-12 justify-content-center bcgImage">
+            <div class="row justify-content-center col-lg-8 form-container">
+                <h2 class="title-blue MarianneBold col-12 text-center ">Formulaire de recutement</h2>
+                <form class="row col-12" action="">
+                    <div class="row justify-content-center col-12">
+                        <div class="col-5">
+                            <input type="text" aria-label="Nom" placeholder="Nom" class="form-control">
+                        </div>
+                        <div class="col-7">
+                            <input type="text" aria-label="Prénom" placeholder="Prénom" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center col-12">
+                        <div class="col-12">
+                            <input type="text" aria-label="Adresse professionnelle"
+                                   placeholder="Adresse professionnelle"
+                                   class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center col-12">
+                        <div class="col-7">
+                            <input type="text" aria-label="Adresse Mèl peronnel" placeholder="Adresse Mèl peronnel"
+                                   class="form-control">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" aria-label="Poste actuelle" placeholder="Poste Actuelle"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center col-12">
+                        <div class="col-7">
+                            <input type="text" aria-label="Structure d'emploi" placeholder="Structure d'emploi"
+                                   class="form-control">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" aria-label="Périmètre géographique" placeholder="Périmètre géographique"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center col-12">
+                        <div class="col-12">
+                            <input type="text" aria-label="Structure rémunératrice"
+                                   placeholder="Structure rémunératrice"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center col-12">
+                        <div class="col-12">
+                            <textarea
+                                    aria-label="Domaines d'experiences et ancienneté dans le domaine + experience comme formateur (en présentiel ou distaniel), etc"
+                                    placeholder="Domaines d'experiences et ancienneté dans le domaine + experience comme formateur (en présentiel ou distaniel), etc "
+                                    name="" class="form-control" id="textarea"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center col-12">
+                        <div class="col-6">
+                            <label class="btn btn-outline-primary col-12" for="file">
+                                + &nbsp;&nbsp; Ajouter une pièce jointe
+                                <input type="file" id="file" class="d-none">
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input type="submit" class="btn btn-primary col-12" value="Envoyer le formulaire">
+                        </div>
+                    </div>
+                </form>
+            </div>
 
         </div>
     </div>

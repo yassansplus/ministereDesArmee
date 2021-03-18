@@ -64,7 +64,9 @@ The navbar toggle appears at this breakpoint */
 
 
 /*----------Fin NAVBAR-----------*/
-
+.container-fluid {
+  max-width: 1820px;
+}
 
 * {
   font-family: Marianne, Arial, serif;
