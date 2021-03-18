@@ -2,6 +2,99 @@
 
 {% block title %}Annuaire{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('annuaire') }}
+{% endblock %}
+
 {% block body %}
-Annuaire...
+<div style="width: 93%; margin: auto;" class="pb-2">
+    <h1 class="font-weight-bold">Annuaire des formateurs</h1>
+</div>
+
+<section class="container bg-gray-100 py-3">
+    <div class="row flex-column text-center mb-2">
+        <div class="title-blue mb-2 mt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.03 170.25" style="width: 64px; fill:#000091;">
+                <g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><path d="M6.4,42.58H27.05a6.4,6.4,0,0,0,0-12.79H6.4a6.4,6.4,0,1,0,0,12.79Z"/><path d="M6.4,75.21H27.05a6.4,6.4,0,0,0,0-12.79H6.4a6.4,6.4,0,1,0,0,12.79Z"/><path d="M6.4,107.84H27.05a6.4,6.4,0,0,0,0-12.8H6.4a6.4,6.4,0,0,0,0,12.8Z"/><path d="M33.44,134.07a6.4,6.4,0,0,0-6.39-6.4H6.4a6.4,6.4,0,1,0,0,12.8H27.05A6.4,6.4,0,0,0,33.44,134.07Z"/><path d="M145.12,0H34.63A17.91,17.91,0,0,0,16.72,17.91v9.74H28.5a8.54,8.54,0,0,1,0,17.07H16.72V60.28H28.5a8.54,8.54,0,0,1,0,17.07H16.72V92.91H28.5a8.53,8.53,0,0,1,0,17.06H16.72v15.57H28.5A8.53,8.53,0,0,1,37,134.07h0a8.53,8.53,0,0,1-8.53,8.53H16.72v9.75a17.9,17.9,0,0,0,17.91,17.9H145.12A17.9,17.9,0,0,0,163,152.35V17.91A17.91,17.91,0,0,0,145.12,0ZM93.51,50.07A14.83,14.83,0,1,1,78.68,64.9,14.83,14.83,0,0,1,93.51,50.07ZM62,115.14a31.49,31.49,0,0,1,63,0Z"/></g></g>
+            </svg>
+        </div>
+        <h3 class="title-blue font-weight-bold">Recherche de formateur</h3>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-12">
+            <form method="GET">
+                <div class="form-control px-2 mb-3">
+                    <input type="text" name="formateurName" class="nostyle" style="width: 92%;" placeholder="Nom d'un formateur, nom d'une formation, ville, ect" aria-label="Username" aria-describedby="basic-addon1">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.46 171.46" class="fill-gray-200 w-16" style="width: 24px; padding-bottom: 0.5em; fill: #d2d2d2;">
+                        <g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1">
+                            <path d="M167.66,149.27l-42.35-42.35a68.65,68.65,0,1,0-18.4,18.38l42.36,42.36a13,13,0,0,0,18.39-18.39Zm-61.19-47.33a50.55,50.55,0,1,1,12.6-33.4A50.59,50.59,0,0,1,106.47,101.94Z"/></g></g>
+                    </svg>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <h3 class="title-blue font-weight-bold">Recherche Avancée</h3>
+    </div>
+    <div class="row mt-4 pb-4">
+        
+        <div class="col-12 col-md-6 col-lg-4">
+            {# Input 1 #}
+            <label>Thématique</label>
+            <select class="custom-select" style="width: 100%; background-color: white;" id="inputGroupSelect01">
+                <option selected>Déroulez le contenu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option> 
+            </select>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-sm-4">
+            <label>Ville</label>
+            <select class="custom-select" style="width: 100%; background-color: white;" id="inputGroupSelect01">
+            {% for city in cities %}
+                {% if loop.index == 0 %}
+                    <option calue="{{ city }}" selected>{{ city }}</option>
+                {% else %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endif %}
+            {% endfor %}
+
+            </select>
+        </div>
+        <div class="col-12 col-lg-4 col-sm-12">
+            <label>Acteur(s) ressource(s)</label>
+            <select class="custom-select" style="width: 100%; background-color: white;" id="inputGroupSelect01">
+                <option selected>Déroulez le contenu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option> 
+            </select>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5 pt-3 pb-5">
+    <h3 class="title-blue font-weight-bold mb-5 ">{{ contacts|length }} formateur(s) trouvé(s)</h3>
+    <section class="row justify-content-lg-start justify-content-around">
+        {% for contact in contacts %}
+            <article class="formateur col-lg-3 offset-lg-1 col-5 p-4 mb-4">
+                <div class="mb-1">
+                    <img src="{{ asset('images/' ~ contact.photoUrl) }}" alt="Photo du contact" class="w-100 p-4" />
+                </div>
+                <div class="mb-2 title-blue font-weight-bold">{{ contact.name }}</div>
+                <div class="mb-2">
+                    <div>
+                        {{ contact.phone|phone_number }}
+                    </div>
+                    <div style="overflow-wrap: break-word;">{{ contact.email }}</div>
+                </div>
+            <a href="mailto:{{ contact.email }}" class="btn btn-outline-primary ">Contacter</a>
+            </article>
+        {% endfor %}
+    </section>
+</section>
 {% endblock %}

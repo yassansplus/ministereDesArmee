@@ -2,7 +2,9 @@
 
 namespace App\Controller\Front;
 
+use App\Repository\ContactRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -37,8 +39,28 @@ class DefaultController extends AbstractController
     /**
      * @Route("/annuaire", name="annuaire")
      */
-    public function annuaire(): Response
+    public function annuaire(ContactRepository $contactRepo, Request $request): Response
     {
-        return $this->render('front/annuaire.html.twig');
+        $cities = [
+            'Rennes',
+            'Bourges',
+            'Angers',
+            'Tours',
+            'Cherbourg',
+            '...'
+        ];
+        $contacts = [];
+
+        // If any search, do the search
+        if ($request->query->has('formateurName')) {
+            $contacts = $contactRepo->findLikeName($request->query->get('formateurName'));
+        } else {
+            $contacts = $contactRepo->findAll();
+        }
+
+        return $this->render('front/annuaire.html.twig', [
+            'contacts' => $contacts,
+            'cities' => $cities
+        ]);
     }
 }
