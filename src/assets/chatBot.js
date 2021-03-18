@@ -1,5 +1,4 @@
 document.addEventListener('click', function (e) {
-    console.log(e.target)
     if (e.target && e.target.classList.contains("answer-to-hibot")) {
         let id = e.target.getAttribute('data-id');
         let content = e.target.getAttribute('data-userinteraction')
