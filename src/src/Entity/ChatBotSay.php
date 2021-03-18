@@ -34,6 +34,11 @@ class ChatBotSay
      */
     private $userSays;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isRoot;
+
 
     public function __construct()
     {
@@ -108,6 +113,18 @@ class ChatBotSay
                 $userSay->setParentQuestion(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsRoot(): ?bool
+    {
+        return $this->isRoot;
+    }
+
+    public function setIsRoot(bool $isRoot): self
+    {
+        $this->isRoot = $isRoot;
 
         return $this;
     }

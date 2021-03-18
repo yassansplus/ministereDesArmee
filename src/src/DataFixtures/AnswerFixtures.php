@@ -2,9 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Answer;
 use App\Entity\ChatBotSay;
-use App\Entity\Question;
 use App\Entity\UserSay;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -15,6 +13,8 @@ class AnswerFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $chatBotSay = $manager->getRepository(ChatBotSay::class)->findAll();
+        $chatBotSayClone = $chatBotSay;
+
         $userSay = $manager->getRepository(UserSay::class)->findAll();
         $userKey = 0;
         foreach ($chatBotSay as $key => $chatBot) {
@@ -26,11 +26,12 @@ class AnswerFixtures extends Fixture implements DependentFixtureInterface
             $userKey = $userKey + 2;
         }
         foreach ($userSay as $answer) {
-            $rand_keys = array_rand($chatBotSay, 2);
-            $answer->addChatBotSay($chatBotSay[$rand_keys[0]]);
-            $answer->addChatBotSay($chatBotSay[$rand_keys[1]]);
+            if (count($chatBotSayClone) > 0) {
+                $rand_keys = array_rand($chatBotSayClone, 1);
+                $answer->setNextQuestion($chatBotSayClone[$rand_keys]);
+                unset($chatBotSayClone[$rand_keys]);
+            }
         }
-
         $manager->flush();
     }
 

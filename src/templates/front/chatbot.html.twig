@@ -7,79 +7,59 @@
     {% endblock %}
 {% block body %}
     <div class="container">
+        <div class="row title">
+            <h1 class="MarianneBold">
+                Trouvez votre dispositif avec <span class=".title-blue">Hibot</span>
+            </h1>
+
+        </div>
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="card">
-                    <div class="card-body chat-care">
-                        <ul class="chat">
-                            <li class="agent clearfix">
-                            <span class="chat-img left clearfix mx-2">
-                                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="Agent" class="img-circle"/>
+                    <div class="card-body chat-care" id="interactionSectionWithHibot">
+                        <ul class="chat" id="chatWithHibot">
+                            <li class="agent clearfix" id="HibotAnswer">
+                            <span class="chat-img left clearfix mx-2" id="imageHibot">
+                               <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 193.65 193.65"><title>06Fichier 2</title><g
+                                           style="fill: #000091; font-size:12px" id="Calque_2" data-name="Calque 2"><g
+                                               id="Calque_2-2" data-name="Calque 2"><path
+                                                   d="M133.84,87.41c7.14.24,13.64-5.9,13.73-12.95a13.25,13.25,0,0,0-13.18-13.38,13,13,0,0,0-13.13,12.84A13.26,13.26,0,0,0,133.84,87.41Z"/><path
+                                                   d="M55.1,74A13.23,13.23,0,0,0,68.26,87.41,13.49,13.49,0,0,0,81.35,74.3,13.17,13.17,0,0,0,68.07,61.07,12.9,12.9,0,0,0,55.1,74Z"/><path
+                                                   d="M185.19,57.19a7.43,7.43,0,1,0-13.56,6.09,82,82,0,0,1-74.81,115.5H24.37l19.32-19.14-5.22-5.28A82,82,0,0,1,22,63.28,7.43,7.43,0,1,0,8.46,57.19,96.93,96.93,0,0,0,22.88,159.34L4.45,177.6a9.37,9.37,0,0,0,6.57,16H96.82A96.87,96.87,0,0,0,185.19,57.19Z"/><path
+                                                   d="M12.15,42.12a64.62,64.62,0,0,1,22.1-3.81,63.59,63.59,0,0,1,28.92,6.83h-.05A32.27,32.27,0,1,0,89.39,96.06v4.56a7.43,7.43,0,1,0,14.87,0V94.79a32.25,32.25,0,1,0,27.14-49.66c-.34,0-.67,0-1,.05a63.58,63.58,0,0,1,29-6.88,64.64,64.64,0,0,1,22.1,3.81,7.43,7.43,0,1,0,5.06-14A79.44,79.44,0,0,0,160,23.47a96.72,96.72,0,0,0-126.31,0A79.4,79.4,0,0,0,7.09,28.14a7.43,7.43,0,1,0,5.06,14Zm51,55.65A20.37,20.37,0,1,1,83.49,77.4,20.4,20.4,0,0,1,63.11,97.77ZM151.77,77.4A20.38,20.38,0,1,1,131.39,57,20.4,20.4,0,0,1,151.77,77.4ZM138.42,26.21c-18.17,4.93-33.15,16.09-41.59,30.55C88.38,42.3,73.4,31.14,55.23,26.21a81.89,81.89,0,0,1,83.18,0Z"/></g></g></svg>
                             </span>
                                 <div class="chat-body clearfix">
-                                    <div class="header clearfix">
-                                        <strong class="primary-font">Jack Sparrow</strong> <small
-                                                class="right text-muted">
-                                            <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
-                                    </div>
                                     <p>
-                                        Lorem ipsum dolor sit amet.
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="admin clearfix">
-                            <span class="chat-img right clearfix  mx-2">
-                                <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="Admin" class="img-circle"/>
-                            </span>
-                                <div class="chat-body clearfix">
-                                    <div class="header clearfix">
-                                        <small class="left text-muted"><span class="glyphicon glyphicon-time"></span>13
-                                            mins ago</small>
-                                        <strong class="right primary-font">Bhaumik Patel</strong>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                        ornare
-                                        dolor, quis ullamcorper ligula sodales.
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="agent clearfix">
-                            <span class="chat-img left clearfix mx-2">
-                                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="Agent" class="img-circle"/>
-                            </span>
-                                <div class="chat-body clearfix">
-                                    <div class="header clearfix">
-                                        <strong class="primary-font">Jack Sparrow</strong> <small
-                                                class="right text-muted">
-                                            <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet.
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="admin clearfix">
-                            <span class="chat-img right clearfix  mx-2">
-                                <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="Admin" class="img-circle"/>
-                            </span>
-                                <div class="chat-body clearfix">
-                                    <div class="header clearfix">
-                                        <small class="left text-muted"><span class="glyphicon glyphicon-time"></span>15
-                                            mins ago</small>
-                                        <strong class="right primary-font">Bhaumik Patel</strong>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                        ornare
-                                        dolor.
+                                        {{ firstInteraction.content }}
                                     </p>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <p class="col-12 text-right">
+                                Posez votre question à <b class="MarianneBold">Hibot</b>
+                            </p>
+                        </div>
+                        <div class="row col-12" id="AnswersToHibot">
+                            {% for userInteraction in firstInteraction.userSays %}
+                                <button
+                                        data-id="{{ userInteraction.id }}"
+                                        data-userinteraction="{{ userInteraction.content }}"
+                                        class="btn btn-outline-primary answer-to-hibot ">
+                                    {{ userInteraction.content }}
+                                </button>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('chatBot') }}
+    {% endblock %}
 {% endblock %}

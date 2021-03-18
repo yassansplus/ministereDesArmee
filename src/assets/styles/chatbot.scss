@@ -1,10 +1,20 @@
 /*/////////////////////////////////*/
 /*/////////  chat styles  /////////*/
 /*/////////////////////////////////*/
+@import 'variables';
+
+.title {
+  h1 {
+    color: $high-grey;
+    margin-bottom: 45px;
+  }
+}
+
 .chat {
   list-style: none;
   margin: 0;
   padding: 0;
+
 }
 
 .chat li {
@@ -21,14 +31,34 @@
   /* color: #777777; */
 }
 
+.card {
+  border-radius: 30px;
+  background-color: #f4f4f4;
+  border: none;
+}
+
+.card-footer {
+  background: transparent;
+  padding-bottom: 30px;
+  border: none;
+}
 
 .chat-care {
   overflow-y: scroll;
+  height: 450px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .chat-care .chat-img {
   width: 50px;
   height: 50px;
+}
+
+.btn.btn-outline-primary {
+  margin-right: 10px;
 }
 
 .chat-care .img-circle {
@@ -42,27 +72,38 @@
 .chat-care .chat-body {
   display: inline-block;
   max-width: 80%;
-  background-color: #FFC195;
-  border-radius: 12.5px;
+  border-radius: 30px;
   padding: 15px;
-}
-
-.chat-care .chat-body strong {
-  color: #0169DA;
 }
 
 .chat-care .admin {
   text-align: right;
   float: right;
+
+  .chat-body {
+    background-color: $high-grey;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .chat-care .admin p {
   text-align: left;
+  color: #fff;
+}
+
+.agent p {
+  color: #fff;
 }
 
 .chat-care .agent {
   text-align: left;
   float: left;
+
+
+  .chat-body {
+    background-color: $blue;
+    border-bottom-left-radius: 0;
+  }
 }
 
 .chat-care .left {

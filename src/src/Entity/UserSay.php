@@ -34,6 +34,11 @@ class UserSay
      */
     private $parentQuestion;
 
+    /**
+     * @ORM\OneToOne(targetEntity=ChatBotSay::class, cascade={"persist", "remove"})
+     */
+    private $nextQuestion;
+
 
     public function __construct()
     {
@@ -93,6 +98,18 @@ class UserSay
     public function setParentQuestion(?ChatBotSay $parentQuestion): self
     {
         $this->parentQuestion = $parentQuestion;
+
+        return $this;
+    }
+
+    public function getNextQuestion(): ?ChatBotSay
+    {
+        return $this->nextQuestion;
+    }
+
+    public function setNextQuestion(?ChatBotSay $nextQuestion): self
+    {
+        $this->nextQuestion = $nextQuestion;
 
         return $this;
     }
