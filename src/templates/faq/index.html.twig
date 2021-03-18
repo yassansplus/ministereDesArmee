@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Faq index{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+        {{ encore_entry_link_tags('faq') }}
+    {% endblock %}
+{% block body %}
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class='col-12'>
+                <h1>Les differents dispositif de formation</h1>
+            </div>
+        </div>
+
+        <br>
+        <div class=" row col-12">
+            {% for faq in faqs %}
+                <div class="col-lg-10 offset-lg-1 col-sm-11 col-11 content">
+                    <input type="checkbox" id="question{{ faq.id }}" name="q" class="questions ">
+                    <label for="question{{ faq.id }}" class="question position-relative">
+                        <h4 class="MarianneBold">{{ faq.question }}</h4>
+                    </label>
+                    <div class="answers">
+                        {{ faq.answer }}
+                    </div>
+                </div>
+                <div class="col-lg-1 col-sm-1 col-1">
+                    <span class="isPlus">+</span>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div> <!-- end of body !-->
+
+
+{% endblock %}
