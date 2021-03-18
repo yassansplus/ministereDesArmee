@@ -10,8 +10,10 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/data-fixtures" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/doctrine-fixtures-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/doctrine-migrations-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/inflector" />
@@ -23,6 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/friendsofphp/proxy-manager-lts" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laminas/laminas-code" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laminas/laminas-zendframework-bridge" />
