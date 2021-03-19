@@ -1,4 +1,5 @@
 @import "variables";
+
 .banner {
   z-index: 2;
 
@@ -34,17 +35,17 @@
 
 
 .blueBLock {
-  img {
-    width: 100px;
-    color: white;
-    margin: 30px 0;
-  }
-
   p {
     font-family: "Marianne-Light", serif;
     font-size: 30px;
     font-weight: lighter;
     margin-bottom: 40px;
+
+    img {
+      width: 100px !important;
+      height: auto !important;
+      margin: 30px 0;
+    }
   }
 }
 
@@ -55,7 +56,14 @@
     font-size: 39px;
     font-weight: bold;
   }
-  p{
+
+  p {
     margin-bottom: $mbTitle;
+  }
+}
+
+.paraFull {
+  p {
+    width: 100%;
   }
 }

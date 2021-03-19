@@ -3,6 +3,8 @@
 namespace App\Controller\Front;
 
 use App\Repository\ContactRepository;
+use App\Repository\DevenirFormateurRepository;
+use App\Repository\HomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,10 +15,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function index(): Response
+    public function index(HomeRepository $homeRepository): Response
     {
+
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+            'homeContent' => $homeRepository->findOneBy(['useThisVersion' => true]),
         ]);
     }
 
@@ -31,9 +34,12 @@ class DefaultController extends AbstractController
     /**
      * @Route("/devenir-formateur-interne", name="devenir_formateur_interne")
      */
-    public function devenirFormateurInterne(): Response
+    public function devenirFormateurInterne(DevenirFormateurRepository $devenirFormateurRepository): Response
     {
-        return $this->render('front/devenir_formateur_interne.html.twig');
+
+        return $this->render('front/devenir_formateur_interne.html.twig', [
+            'pageContent' => $devenirFormateurRepository->findOneBy(['useThisVersion' => true])
+        ]);
     }
 
     /**
@@ -49,7 +55,6 @@ class DefaultController extends AbstractController
             'Cherbourg',
             '...'
         ];
-        $contacts = [];
         $fomateurNameResearch = '';
 
         // If any search, do the search

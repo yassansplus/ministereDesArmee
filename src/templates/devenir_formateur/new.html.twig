@@ -1,0 +1,11 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}New DevenirFormateur{% endblock %}
+
+{% block body %}
+    <h1>Create new DevenirFormateur</h1>
+
+    {{ include('devenir_formateur/_form.html.twig') }}
+
+    <a href="{{ path('back_formateur_devenir_formateur_index') }}">back to list</a>
+{% endblock %}

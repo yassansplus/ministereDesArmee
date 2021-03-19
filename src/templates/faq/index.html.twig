@@ -10,6 +10,9 @@
         <div class="row justify-content-center">
             <div class='col-12'>
                 <h1 class="MarianneBold">Les differents dispositif de formation</h1>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('back_faq_faq_new') }}" class="btn btn-primary"> Ajouter un élément</a>
+                {% endif %}
             </div>
         </div>
         <br>
@@ -18,10 +21,16 @@
                 <div class="col-lg-10 offset-lg-1 col-sm-11 col-11 content">
                     <input type="checkbox" id="question{{ faq.id }}" name="q" class="questions ">
                     <label for="question{{ faq.id }}" class="question position-relative">
-                        <h4 class="MarianneBold">{{ faq.question }}</h4>
+                        <h4 class="MarianneBold">{{ faq.question }}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('back_faq_faq_edit',{id: faq.id}) }}" class="btn btn-outline-primary">
+                                    Modifier</a>
+                            {% endif %}
+                        </h4>
+
                     </label>
                     <div class="answers">
-                        {{ faq.answer }}
+                        {{ faq.answer| raw }}
                     </div>
                 </div>
                 <div class="col-lg-1 col-sm-1 col-1">

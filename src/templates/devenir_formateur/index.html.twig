@@ -1,0 +1,38 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}DevenirFormateur index{% endblock %}
+
+{% block body %}
+    <h1>DevenirFormateur index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for devenir_formateur in devenir_formateurs %}
+            <tr>
+                <td>{{ devenir_formateur.id }}</td>
+                <td>{{ devenir_formateur.title }}</td>
+                <td>
+                    <a class="btn btn-warning"
+                       href="{{ path('back_formateur_devenir_formateur_edit', {'id': devenir_formateur.id}) }}">éditer</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-danger">{{ include('devenir_formateur/_delete_form.html.twig') }}</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun contenu</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_formateur_devenir_formateur_new') }}">Nouveau contenu</a>
+{% endblock %}

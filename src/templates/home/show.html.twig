@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>Home</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ home.id }}</td>
+        </tr>
+        <tr>
+            <th>MainTitle</th>
+            <td>{{ home.mainTitle }}</td>
+        </tr>
+        <tr>
+            <th>Actu</th>
+            <td>{{ home.actu }}</td>
+        </tr>
+        <tr>
+            <th>ActuLeft</th>
+            <td>{{ home.actuLeft }}</td>
+        </tr>
+        <tr>
+            <th>ActuRight</th>
+            <td>{{ home.actuRight }}</td>
+        </tr>
+        <tr>
+            <th>TitleLeft</th>
+            <td>{{ home.titleLeft }}</td>
+        </tr>
+        <tr>
+            <th>TitleRight</th>
+            <td>{{ home.titleRight }}</td>
+        </tr>
+        <tr>
+            <th>BlueBlockTitle</th>
+            <td>{{ home.BlueBlockTitle }}</td>
+        </tr>
+        <tr>
+            <th>Picto</th>
+            <td>{{ home.picto }}</td>
+        </tr>
+        <tr>
+            <th>SubTitleBlueBlock</th>
+            <td>{{ home.subTitleBlueBlock }}</td>
+        </tr>
+        <tr>
+            <th>SecondBlueTitle</th>
+            <td>{{ home.secondBlueTitle }}</td>
+        </tr>
+        <tr>
+            <th>SubContent</th>
+            <td>{{ home.subContent }}</td>
+        </tr>
+        <tr>
+            <th>ThirdTitleBlock</th>
+            <td>{{ home.thirdTitleBlock }}</td>
+        </tr>
+        <tr>
+            <th>ThirdTextBlock</th>
+            <td>{{ home.thirdTextBlock }}</td>
+        </tr>
+        <tr>
+            <th>LastBlueTitle</th>
+            <td>{{ home.lastBlueTitle }}</td>
+        </tr>
+        <tr>
+            <th>LastPicto</th>
+            <td>{{ home.lastPicto }}</td>
+        </tr>
+        <tr>
+            <th>LastSubTitle</th>
+            <td>{{ home.lastSubTitle }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_home_index') }}">back to list</a>
+
+    <a href="{{ path('back_home_edit', {'id': home.id}) }}">edit</a>
+
+    {{ include('home/_delete_form.html.twig') }}
+{% endblock %}

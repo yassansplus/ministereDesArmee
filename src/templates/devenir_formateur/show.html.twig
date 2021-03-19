@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DevenirFormateur{% endblock %}
+
+{% block body %}
+    <h1>DevenirFormateur</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ devenir_formateur.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ devenir_formateur.title }}</td>
+        </tr>
+        <tr>
+            <th>Content</th>
+            <td>{{ devenir_formateur.content }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_formateur_devenir_formateur_index') }}">back to list</a>
+
+    <a href="{{ path('back_formateur_devenir_formateur_edit', {'id': devenir_formateur.id}) }}">edit</a>
+
+    {{ include('devenir_formateur/_delete_form.html.twig') }}
+{% endblock %}

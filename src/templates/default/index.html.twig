@@ -12,38 +12,32 @@
                 <img src="{{ asset('images/Composant1.jpg') }}" class="col-12" alt="">
             </div>
             <div class=" titleBlock col-5 offset-2">
-                <h1 class="title-blue">A la recherche d'une formation ?</h1>
+                <h1 class="title-blue">{{ homeContent.mainTitle }}</h1>
                 <a href="#" class="btn btn-primary">Je trouve mon dispositif</a>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <h2 class="font-weight-bold">Actualités</h2>
+                <h2 class="font-weight-bold">{{ homeContent.actu }}</h2>
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-8 bg-primary">
-                <h3 class="text-right col-10">Nouvelle formation: Master CyberDefense à St Cyr</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor ipsam itaque praesentium
-                    voluptatem? A adipisci deserunt dicta illo labore necessitatibus, numquam perspiciatis
-                    quis recusandae sequi totam unde ut veniam!
-                </p>
+                <h3 class="text-right col-10">{{ homeContent.titleLeft }}</h3>
+                {{ homeContent.actuLeft | raw }}
             </div>
             <div class="col-4 bg-primary">
-                <h3 class="text-right col-10">Nouvelle formation: Master CyberDefense à St Cyr</h3>
-                <p>
-                    {# TODO: ajouter le paragraphe ici #}
-                </p>
+                <h3 class="text-right col-10">{{ homeContent.titleRight }}</h3>
+                {{ homeContent.actuRight | raw }}
             </div>
         </div>
 
         <div class="row justify-content-center blueBLock mb-5">
             <div class="jumbotron blueBLock jumbotron-fluid col-12 text-center">
-                <h2 class="display-4 text-white">Nos différents dispositifs de formation</h2>
-                <img src="{{ asset('images/chapeau_blanc.png') }}" alt="">
-                <p class="text-white">CPF,CSP,Préparation aux concours, etc</p>
+                <h2 class="display-4 text-white">{{ homeContent.blueBlockTitle }}</h2>
+                {{ homeContent.picto|raw }}
+                <p class="text-white">{{ homeContent.subTitleBlueBlock }}</p>
                 <a href="" class="btn  bg-white title-blue">Je découvre les dispositif de formation</a>
             </div>
         </div>
@@ -54,9 +48,9 @@
                     <img src="{{ asset('images/Composant2.jpg') }}" class="col-12" alt="">
                 </div>
                 <div class="titleBlock searchFormation col-5 offset-7">
-                    <h3 class="col-10 title-blue">A la recherche d'une formation ?</h3>
-                    <div class="col-10">
-                        <p class="col-12">Plus de 400 formations</p>
+                    <h3 class="col-10 title-blue">{{ homeContent.secondBlueTitle }}</h3>
+                    <div class="col-10 paraFull">
+                        {{ homeContent.subContent | raw }}
                         <a href="" class="btn btn-primary">Découvrir le catalogue de formation</a>
                     </div>
 
@@ -67,13 +61,9 @@
         <div class="row blockFormateur">
             <div class="col-3 offset-1">
                 <h3 class="title-grey">
-                    Je souhaite devenir formateur
+                    {{ homeContent.thirdTitleBlock }}
                 </h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Accusamus alias corporis eaque est eveniet, fuga ipsum maiores molestiae non praesentium quas qui,
-                    quibusdam ratione reiciendis sed sit sunt voluptates voluptatum!
-                </p>
+                {{ homeContent.thirdTextBlock | raw }}
                 <div class="row justify-content-center">
                     <a href="" class="btn btn-primary">
                         Je deviens formateur
@@ -89,9 +79,9 @@
 
         <div class="row justify-content-center blueBLock">
             <div class="jumbotron blueBLock jumbotron-fluid col-12 text-center">
-                <h2 class="display-4 text-white">Annuaire</h2>
-                <img src="{{ asset('images/annuaire_blanc.png') }}" alt="">
-                <p class="text-white">CPF,CSP,Préparation aux concours, etc</p>
+                <h2 class="display-4 text-white">{{ homeContent.lastBlueTitle }}</h2>
+                {{ homeContent.lastPicto | raw }}
+                <p></p>
                 <a href="" class="btn  bg-white title-blue">Je consulte l'annuaire des formateur</a>
             </div>
         </div>

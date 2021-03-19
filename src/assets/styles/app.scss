@@ -90,6 +90,7 @@ The navbar toggle appears at this breakpoint */
 
 .btn-outline-primary {
   color: $blue;
+  background-color: white;
   border-color: $blue;
   border-radius: 50px;
 }
@@ -136,7 +137,6 @@ p {
   margin: 0; /* 2 */
   border-style: none;
   overflow: visible;
-  border-style: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
