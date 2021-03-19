@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'dashboard.html.twig' %}
 
-{% block title %}Contact{% endblock %}
+{% block title %}Consulter un contact{% endblock %}
 
 {% block body %}
-    <h1 class="font-weight-bold mb-4">Contact</h1>
+    <h1 class="font-weight-bold mb-4">Consulter un contact</h1>
 
     <table class="table">
         <tbody>
@@ -30,9 +30,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('back_contact_index') }}">Retour au menu</a>
+    <a class="btn btn-primary" href="{{ path('back_contact_index') }}">Retour au menu</a>
 
-    <a href="{{ path('back_contact_edit', {'id': contact.id}) }}">Editer</a>
+    <a class="btn btn-outline-primary rounded" href="{{ path('back_contact_edit', {'id': contact.id}) }}">Editer</a>
 
     {{ include('back/contact/_delete_form.html.twig') }}
 {% endblock %}

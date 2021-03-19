@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.6.0-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/css/animate.min.css') }}">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="container-fluid" style="height: 100%;">
+    <div class="row" style="height: 100%;">
+        <nav class="col-12 col-lg-2 bg-primary">
+            <div class="" style="">
+                <h4 class="text-center font-weight-bold text-white" style="padding-top: 1em; overflow-wrap: break-word;">Ministère</h4>
+                <br class="border" />
+
+                <div class="d-flex flex-column">
+                    <a href="{{ path('back_default') }}" class="btn btn-outline-primary mb-4">Accueil</a>
+                    <a href="{{ path('back_contact_index') }}" class="btn btn-outline-primary mb-4">Contacts</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="col-12 col-lg-10" style="background-color: #d2d2d2; padding: 0;">
+            <section style="background-color: #f4f4f4;" class="pl-4 py-2 shadow d-flex justify-content-between">
+                <h3 style="color: #4E4E4E" class="pt-4 font-weight-bold">Dashboard</h3>
+                <a href="/" class="pr-5">
+                    <img src="/images/logo.png" alt="Logo ministère des armées" class="logo" style="">
+                    <img src="/images/Logo_CivilsDeLaDefense.665d2b7f.svg" alt="Logo civils de la défense" class="logo">
+                </a>
+            </section>
+
+            <section style="padding-left: 1em;">
+                <article class="m-4 p-4 rounded" style="background-color: #f4f4f4;">
+                    {% block body %}{% endblock %}
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
