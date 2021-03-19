@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\DevenirFormateur;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,7 +15,7 @@ class DevenirFormateurType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content')
+            ->add('content', CKEditorType::class)
             ->add('useThisVersion', CheckboxType::class, ["required" => false]);
     }
 

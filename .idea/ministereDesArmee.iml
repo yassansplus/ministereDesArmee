@@ -25,7 +25,9 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/friendsofphp/proxy-manager-lts" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/friendsofsymfony/ckeditor-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/helios-ag/fm-elfinder-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laminas/laminas-code" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laminas/laminas-zendframework-bridge" />
@@ -39,6 +41,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/studio-42/elfinder" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/asset" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/cache" />
