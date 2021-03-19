@@ -25,18 +25,18 @@
         <div class="row mb-5">
             <div class="col-8 bg-primary">
                 <h3 class="text-right col-10">{{ homeContent.titleLeft }}</h3>
-                {{ homeContent.actuLeft }}
+                {{ homeContent.actuLeft | raw }}
             </div>
             <div class="col-4 bg-primary">
                 <h3 class="text-right col-10">{{ homeContent.titleRight }}</h3>
-                {{ homeContent.actuRight }}
+                {{ homeContent.actuRight | raw }}
             </div>
         </div>
 
         <div class="row justify-content-center blueBLock mb-5">
             <div class="jumbotron blueBLock jumbotron-fluid col-12 text-center">
                 <h2 class="display-4 text-white">{{ homeContent.blueBlockTitle }}</h2>
-                <img src="{{ asset('images/chapeau_blanc.png') }}" alt="">
+                {{ homeContent.picto|raw }}
                 <p class="text-white">{{ homeContent.subTitleBlueBlock }}</p>
                 <a href="" class="btn  bg-white title-blue">Je découvre les dispositif de formation</a>
             </div>
@@ -80,7 +80,7 @@
         <div class="row justify-content-center blueBLock">
             <div class="jumbotron blueBLock jumbotron-fluid col-12 text-center">
                 <h2 class="display-4 text-white">{{ homeContent.lastBlueTitle }}</h2>
-                <img src="{{ asset('images/annuaire_blanc.png') }}" alt="">
+                {{ homeContent.lastPicto | raw }}
                 <p></p>
                 <a href="" class="btn  bg-white title-blue">Je consulte l'annuaire des formateur</a>
             </div>

@@ -20,7 +20,7 @@ class FaqController extends AbstractController
      */
     public function index(FaqRepository $faqRepository): Response
     {
-        return $this->render('faq/index.html.twig', [
+        return $this->render('faq/Backindex.html.twig', [
             'faqs' => $faqRepository->findAll(),
         ]);
     }

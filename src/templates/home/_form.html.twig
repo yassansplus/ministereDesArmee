@@ -1,4 +1,88 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-<button class="btn">{{ button_label|default('Save') }}</button>
+<div class="row">
+    <div class="col-12">
+        {{ form_label(form.mainTitle, 'Titre principal') }}
+        {{ form_widget(form.mainTitle, {'attr': {'class': 'form-control'}}) }}
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-4">
+        {{ form_label(form.actu, 'Titre du block Actualités') }}
+        {{ form_widget(form.actu, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-6">
+        {{ form_label(form.actuLeft, 'titre de gauche') }}
+        {{ form_widget(form.titleLeft, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(form.actuLeft, 'Block de gauche') }}
+        {{ form_widget(form.actuLeft) }}
+    </div>
+    <div class="col-6">
+
+        {{ form_label(form.actuLeft, 'titre de droite') }}
+        {{ form_widget(form.titleRight, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(form.actuRight, 'Block de droite') }}
+        {{ form_widget(form.actuRight) }}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-6">
+        {{ form_label(form.BlueBlockTitle, 'Titre du block Bleu') }}
+        {{ form_widget(form.BlueBlockTitle, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-6">
+        {{ form_label(form.picto, 'Choix du picto') }}
+        {{ form_widget(form.picto, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-6">
+        {{ form_label(form.subTitleBlueBlock, 'texte en dessous du picto') }}
+        {{ form_widget(form.subTitleBlueBlock, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-6 offset-6">
+        {{ form_label(form.secondBlueTitle, 'Second gros titre Bleu') }}
+        {{ form_widget(form.secondBlueTitle, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-6 offset-6">
+        {{ form_label(form.subContent, 'texte en dessous du second gros titre') }}
+        {{ form_widget(form.subContent, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row ">
+    <div class="col-6">
+        {{ form_label(form.thirdTitleBlock, 'Titre gris foncé') }}
+        {{ form_widget(form.thirdTitleBlock, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(form.thirdTextBlock, 'Titre gris foncé') }}
+        {{ form_widget(form.thirdTextBlock, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-6">
+        {{ form_label(form.lastBlueTitle, 'Titre du block Bleu') }}
+        {{ form_widget(form.lastBlueTitle, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-6">
+        {{ form_label(form.lastPicto, 'Choix du picto') }}
+        {{ form_widget(form.lastPicto, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-6">
+        {{ form_label(form.lastSubTitle, 'texte en dessous du picto') }}
+        {{ form_widget(form.lastSubTitle, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+{{ form_widget(form) }}
+<button class="btn btn-success">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

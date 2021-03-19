@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'dashboard.html.twig' %}
 
 {% block title %}Home index{% endblock %}
 
@@ -18,8 +18,10 @@
                 <td>{{ home.id }}</td>
                 <td>{{ home.mainTitle }}</td>
                 <td>
-                    <a href="{{ path('back_home_show', {'id': home.id}) }}">show</a>
-                    <a href="{{ path('back_home_edit', {'id': home.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('back_home_show', {'id': home.id}) }}">show</a>
+                    <a class="btn btn-warning" href="{{ path('back_home_edit', {'id': home.id}) }}">edit</a>
+                    <a class="btn btn-danger"
+                       href="{{ path('back_home_delete', {'id': home.id}) }}">{{ include('home/_delete_form.html.twig') }}</a>
                 </td>
             </tr>
         {% else %}

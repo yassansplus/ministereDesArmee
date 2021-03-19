@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Home;
-use FM\ElfinderBundle\Form\Type\ElFinderType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,16 +20,17 @@ class HomeType extends AbstractType
             ->add('titleLeft')
             ->add('titleRight')
             ->add('BlueBlockTitle')
-            ->add('picto', ElFinderType::class)
+            ->add('picto', CKEditorType::class)
             ->add('subTitleBlueBlock')
             ->add('secondBlueTitle')
             ->add('subContent', CKEditorType::class)
             ->add('thirdTitleBlock')
             ->add('thirdTextBlock', CKEditorType::class)
             ->add('lastBlueTitle')
-            ->add('lastPicto')
+            ->add('lastPicto', CKEditorType::class)
             ->add('lastSubTitle')
             ->add('useThisVersion');
+
     }
     //            ->add('media', ElFinderType::class, array(
     //                'label' => 'Photo',
