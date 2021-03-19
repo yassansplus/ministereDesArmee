@@ -25,7 +25,7 @@ function createElementUserAnswer(content, isHibot) {
     var para = document.createElement("p");
     var node = document.createTextNode(content);
     div.className = "chat-body clearfix"
-    li.className = `clearfix ${isHibot ? 'agent' : 'admin'}   position-relative`;
+    li.className = `clearfix ${isHibot ? 'agent' : 'admin '}   position-relative `;
     if (isHibot) {
         li.appendChild(imgClone);
     }
@@ -35,6 +35,8 @@ function createElementUserAnswer(content, isHibot) {
     li.appendChild(div);
     blockChat = document.getElementById('chatWithHibot');
     blockChat.appendChild(li);
+    window.getComputedStyle(li).opacity;
+    li.className += " animate__animated animate__fadeInUp"
 }
 
 function updateUserAnswers(answers) {
