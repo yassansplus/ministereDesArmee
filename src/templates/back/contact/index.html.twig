@@ -1,0 +1,46 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Liste des contacts{% endblock %}
+
+{% block body %}
+    <style>
+
+    </style>
+    <h4 class="font-weight-bold mb-4 mt-3">Liste des contacts</h4>
+
+        <a class="btn btn-primary mb-4" href="{{ path('back_contact_new') }}">Ajouter un contact</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.phone|phone_number }}</td>
+                <td><img src="{{ asset('images/' ~ contact.photoUrl) }}" style="width: 64px;" class="rounded"/></td>
+                <td>
+                    <a href="{{ path('back_contact_show', {'id': contact.id}) }}" class="btn btn-primary">Voir</a>
+                    <a href="{{ path('back_contact_edit', {'id': contact.id}) }}" class="btn btn-outline-primary rounded">Editer</a>
+                    {{ include('back/contact/_delete_form.html.twig') }}
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune contact</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

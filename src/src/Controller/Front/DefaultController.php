@@ -50,17 +50,20 @@ class DefaultController extends AbstractController
             '...'
         ];
         $contacts = [];
+        $fomateurNameResearch = '';
 
         // If any search, do the search
         if ($request->query->has('formateurName')) {
             $contacts = $contactRepo->findLikeName($request->query->get('formateurName'));
+            $fomateurNameResearch = $request->query->get('formateurName');
         } else {
             $contacts = $contactRepo->findAll();
         }
 
         return $this->render('front/annuaire.html.twig', [
             'contacts' => $contacts,
-            'cities' => $cities
+            'cities' => $cities,
+            'fomateurNameResearch' => $fomateurNameResearch
         ]);
     }
 }

@@ -8,20 +8,6 @@ html, body {
     background-color: $gray-100;
 }
 
-.nostyle {
-    font-family: inherit; /* 1 */
-    background-color: inherit;
-    font-size: 100%; /* 1 */
-    line-height: 1.15; /* 1 */
-    margin: 0; /* 2 */
-    border-style: none;
-    overflow: visible;
-    border-style: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 .nostyle:focus {
     outline: none;
 }
@@ -48,4 +34,12 @@ article.formateur {
 
 .btn-outline-primary:hover {
     background-color: $blue;
+}
+
+.search-button {
+    background-color: $blue;
+    padding: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
 }

@@ -1,0 +1,14 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Ajouter un Contact{% endblock %}
+
+{% block body %}
+    <h1 class="font-weight-bold mb-4">Ajouter un contact</h1>
+
+    {{ include('back/contact/_form.html.twig') }}
+
+<div class="mt-4">
+        <a href="{{ path('back_contact_index') }}" class="btn btn-primary">Retour au menu</a>
+
+    </div>
+{% endblock %}
