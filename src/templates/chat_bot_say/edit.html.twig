@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ChatBotSay{% endblock %}
+
+{% block body %}
+    <h1>Edit ChatBotSay</h1>
+
+    {{ include('chat_bot_say/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('back_chat_bot_say_index') }}">back to list</a>
+
+    {{ include('chat_bot_say/_delete_form.html.twig') }}
+{% endblock %}

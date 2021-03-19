@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserSay index{% endblock %}
+
+{% block body %}
+    <h1>UserSay index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Content</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user_say in user_says %}
+            <tr>
+                <td>{{ user_say.id }}</td>
+                <td>{{ user_say.content }}</td>
+                <td>
+                    <a href="{{ path('back_user_say_show', {'id': user_say.id}) }}">show</a>
+                    <a href="{{ path('back_user_say_edit', {'id': user_say.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_user_say_new') }}">Create new</a>
+{% endblock %}

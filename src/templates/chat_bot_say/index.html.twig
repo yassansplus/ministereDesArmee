@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ChatBotSay index{% endblock %}
+
+{% block body %}
+    <h1>ChatBotSay index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Content</th>
+            <th>IsRoot</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for chat_bot_say in chat_bot_says %}
+            <tr>
+                <td>{{ chat_bot_say.id }}</td>
+                <td>{{ chat_bot_say.content }}</td>
+                <td>{{ chat_bot_say.isRoot ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('back_chat_bot_say_show', {'id': chat_bot_say.id}) }}">show</a>
+                    <a href="{{ path('back_chat_bot_say_edit', {'id': chat_bot_say.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_chat_bot_say_new') }}">Create new</a>
+{% endblock %}

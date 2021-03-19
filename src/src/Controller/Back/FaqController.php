@@ -69,7 +69,7 @@ class FaqController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('faq_index');
+            return $this->redirectToRoute('back_faq_index');
         }
 
         return $this->render('faq/edit.html.twig', [
@@ -89,6 +89,6 @@ class FaqController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('faq_index');
+        return $this->redirectToRoute('back_faq_index');
     }
 }

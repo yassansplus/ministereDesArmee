@@ -2,26 +2,25 @@
 
 namespace App\Form;
 
-use App\Entity\Faq;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use App\Entity\ChatBotSay;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class FaqType extends AbstractType
+class ChatBotSayType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('question', TextType::class)
-            ->add('answer', CKEditorType::class);
+            ->add('content')
+            ->add('isRoot')
+            ->add('answersOfUser');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Faq::class,
+            'data_class' => ChatBotSay::class,
         ]);
     }
 }

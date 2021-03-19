@@ -1,4 +1,5 @@
 @import "variables";
+
 .banner {
   z-index: 2;
 
@@ -55,7 +56,14 @@
     font-size: 39px;
     font-weight: bold;
   }
-  p{
+
+  p {
     margin-bottom: $mbTitle;
+  }
+}
+
+.paraFull {
+  p {
+    width: 100%;
   }
 }

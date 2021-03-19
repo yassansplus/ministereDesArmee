@@ -4,6 +4,7 @@ namespace App\Controller\Front;
 
 use App\Repository\ContactRepository;
 use App\Repository\DevenirFormateurRepository;
+use App\Repository\HomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,10 +15,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function index(): Response
+    public function index(HomeRepository $homeRepository): Response
     {
+
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+            'homeContent' => $homeRepository->findOneBy(['useThisVersion' => true]),
         ]);
     }
 
