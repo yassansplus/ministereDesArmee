@@ -5,6 +5,8 @@ namespace App\Controller\Back;
 use App\Entity\ChatBotSay;
 use App\Form\ChatBotSayType;
 use App\Repository\ChatBotSayRepository;
+use App\Repository\UserSayRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,24 +29,41 @@ class ChatBotSayController extends AbstractController
 
     /**
      * @Route("/new", name="chat_bot_say_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param ChatBotSayRepository $chatBotSayRepository
+     * @param UserSayRepository $userSayRepository
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, ChatBotSayRepository $chatBotSayRepository, UserSayRepository $userSayRepository, EntityManagerInterface $em): Response
     {
-        $chatBotSay = new ChatBotSay();
-        $form = $this->createForm(ChatBotSayType::class, $chatBotSay);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($chatBotSay);
-            $entityManager->flush();
+        // dd($request->request->get('questionParent'));
+        if ($request->request->get('save')) {
+            //On initialise les variable pour travailler avec des Objets
+            $question = new ChatBotSay();
+            $reponse = array_diff($request->request->get('reponse'), ['null']);
+            $reponse = $userSayRepository->findById($reponse);
+            $QuestionSuivante = array_diff($request->request->get('question'), ['null']);
+            $reponse = $chatBotSayRepository->findById($reponse);
 
-            return $this->redirectToRoute('chat_bot_say_index');
+            //on applique les relation entre elle
+            $question->setIsRoot(false);
+            $question->setContent($request->request->get('questionParent'));
+
+            foreach ($reponse as $key => $rep) {
+                $rep->setQuestionParent($question);
+                $rep->setQuestionSuivante($QuestionSuivante[$key]);
+                $question->addAnswersOfUser($rep);
+            }
+            $em->persist($question);
+            $em->flush();
+            return $this->redirectToRoute('back_chat_bot_say_index');
+
+
         }
-
         return $this->render('chat_bot_say/new.html.twig', [
-            'chat_bot_say' => $chatBotSay,
-            'form' => $form->createView(),
+            'userSay' => $userSayRepository->findAll(),
+            'chatBotSay' => $chatBotSayRepository->findAll(),
         ]);
     }
 

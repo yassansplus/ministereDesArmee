@@ -1,11 +1,61 @@
-{% extends 'base.html.twig' %}
+{% extends 'dashboard.html.twig' %}
 
 {% block title %}New ChatBotSay{% endblock %}
 
 {% block body %}
-    <h1>Create new ChatBotSay</h1>
+    <div class="row">
+        <h1 class="col-12">ChatBot</h1>
+    </div>
+    <form action="{{ path('back_chat_bot_say_new') }}" method="post">
+        <div class="row">
+            <div class="col-4">
+                <label for="">
+                    Question
+                </label>
+                <input type="text" name="questionParent" aria-label="QuestionParent" class="form-control">
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    {% for i in 1..5 %}
+                        <div class="col-12">
+                            <label for="">
+                                Réponse
+                            </label>
+                            <select name="reponse[]" id="" class="form-control">
+                                <option value="null">Pas de question suivante</option>
+                                {% for answer in userSay %}
+                                    <option class="form-control" value="{{ answer.id }}">{{ answer.content }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endfor %}
+                </div>
 
-    {{ include('chat_bot_say/_form.html.twig') }}
+            </div>
+            <div class="col-3">
+                <div class="row">
+                    {% for i in 1..5 %}
+                        <div class="col-12">
+                            <label for="">
+                                Question suivante
+                            </label>
+                            <select name="question[]" id="" class="form-control">
+                                <option value="null">Pas de question suivante</option>
+                                {% for answer in userSay %}
+                                    <option class="form-control" value="{{ answer.id }}">{{ answer.content }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-1">
+                <p class="mb-4"></p>
+                <input type="submit" class="btn btn-success" value="Enregistrer" name="save">
+            </div>
 
+        </div>
+    </form>
     <a href="{{ path('back_chat_bot_say_index') }}">back to list</a>
+
 {% endblock %}
