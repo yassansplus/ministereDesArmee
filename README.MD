@@ -12,3 +12,6 @@
     > php bin/console d:f:l (et répondre YES)
 
 Il faudra peut-etre attendre un peu pour que les assets soit compilé avec Webpack.
+
+
+Ce projet comporte un chatbot, une mise en page style WP
